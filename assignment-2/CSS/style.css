@@ -9,16 +9,13 @@
 			margin-top: 2%;
 			font-size: 175%;
 		}
-		section.osn {
+		.osn {
 			background-color: #FFB073 ;
 			border: 1px solid black;
 			height: auto;
 			position: relative;
-			margin: 0;	
-			margin-top: 5%;
-			padding: 0;
 		}
-		p.help {
+		.help {
 			float: right;
 			margin: 0;
 			background-color: pink;
@@ -31,7 +28,7 @@
 			font-size: 125%;
 			color: black;
 		}
-		section>p.def{
+		p.def{
 			margin: 3%;
 			clear: right;
 			color: black;
@@ -43,22 +40,26 @@
 		#n3{
 			background-color: lightyellow;
 		}
+		
 
 			
 		@media (min-width:992px ) {
 			#osn1 {
+				margin-top: 0;
 				margin-left: 2%;
 				margin-right: 1%;
 				float: left;
 				width: 30.66666%;
 			}
 				#osn2 {
+				margin-top: 0;
 				margin-left: 1%;
 				margin-right: 1%;
 				float: left;
 				width: 30.66666%;
 			}
 				#osn3 {
+				margin-top: 0;
 				margin-left: 1%;
 				margin-right: 2%;
 				float: left;
@@ -70,12 +71,14 @@
 
 		@media (min-width:768px ) and (max-width:991px ) {
 			#osn1 {
+				margin-top: 5%;
 				margin-left: 2%;
 				margin-right: 1%;
 				float:  left;
 				width: 47%;
 			}
 				#osn2 {
+				margin-top: 5%;
 				margin-left: 1%;
 				margin-right: 2%;
 				float:  left;
@@ -90,18 +93,21 @@
 
 		}
 
-		@media (max-width:767px ) {
-				section.osn {
-				width: 86%;
-				margin: 0%;
-				margin-left: 7%;
-				margin-right: 7%;
-				margin-bottom: 2%;
+		@media (max-width: 767px) and (min-width: 0px) {
+			#osn1, #osn2, #osn3{
+			width: 86%;
+			margin-top: 5%;
+			margin-left: 7%;
+			margin-right: 7%;
+			margin-bottom: 2%;
 			}
 			#osn1{
-				margin-top: 5%;
-			}
+			margin-top: 5%;
 		}
+
+		
+			
+		
 		
 
 		
