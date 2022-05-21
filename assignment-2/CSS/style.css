@@ -1,0 +1,108 @@
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			font-size: 100%;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+		}
+		h1 {
+			text-align: center;
+			font-style: italic;
+			margin-top: 2%;
+			font-size: 175%;
+		}
+		section.osn {
+			background-color: #FFB073 ;
+			border: 1px solid black;
+			height: auto;
+			position: relative;	
+			margin-top: 5%;
+			padding: 0;
+		}
+		p.help {
+			float: right;
+			margin: 0;
+			background-color: pink;
+			height: auto;
+			width: auto;
+			padding-left: 10%;
+			padding-right: 10%;
+			border: 1px solid black;
+			margin-bottom: 3%;
+			font-size: 125%;
+			color: black;
+		}
+		section>p.def{
+			margin: 3%;
+			clear: right;
+			color: black;
+		}
+		#n2{
+			color: white;
+			background-color: indianred;
+		}
+		#n3{
+			background-color: lightyellow;
+		}
+
+		@media (min-width:992px ) {
+			#osn1 {
+				margin-left: 2%;
+				margin-right: 1%;
+				float: left;
+				width: 30.66666%;
+			}
+				#osn2 {
+				margin-left: 1%;
+				margin-right: 1%;
+				float: left;
+				width: 30.66666%;
+			}
+				#osn3 {
+				margin-left: 1%;
+				margin-right: 2%;
+				float: left;
+				width: 30.66666%;
+			}
+
+		}
+
+
+		@media (min-width:768px ) and ( max-width:991px)  {
+			#osn1 {
+				margin-left: 2%;
+				margin-right: 1%;
+				float:  left;
+				width: 47%;
+			}
+				#osn2 {
+				margin-left: 1%;
+				margin-right: 2%;
+				float:  left;
+				width: 47%;
+			}
+				#osn3 {
+				margin: 2%;
+				width: auto;
+				float: left;
+				clear: both;
+			}
+
+		}
+
+		@media ( max-width:767px)  {
+			#osn1, #osn2, #osn3 {
+				margin-left: 7%;
+				margin-right: 7%;
+				margin-bottom: 2%;
+				margin-top: 0%;
+				width: 86%;
+			}
+			#osn1{
+				margin-top: 5%;
+			}
+
+		}
+
+
+		
