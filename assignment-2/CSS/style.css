@@ -1,7 +1,5 @@
 		*{
 			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
 			font-size: 100%;
 			font-family: Verdana, Arial, Helvetica, sans-serif;
 		}
@@ -15,7 +13,8 @@
 			background-color: #FFB073 ;
 			border: 1px solid black;
 			height: auto;
-			position: relative;	
+			position: relative;
+			margin: 0;	
 			margin-top: 5%;
 			padding: 0;
 		}
@@ -45,6 +44,7 @@
 			background-color: lightyellow;
 		}
 
+			
 		@media (min-width:992px ) {
 			#osn1 {
 				margin-left: 2%;
@@ -68,7 +68,7 @@
 		}
 
 
-		@media (min-width:768px ) and ( max-width:991px)  {
+		@media (min-width:768px ) and (max-width:991px ) {
 			#osn1 {
 				margin-left: 2%;
 				margin-right: 1%;
@@ -90,19 +90,23 @@
 
 		}
 
-		@media ( max-width:767px)  {
-			#osn1, #osn2, #osn3 {
+		@media (max-width:767px ) {
+				section.osn {
+				width: 86%;
+				margin: 0%;
 				margin-left: 7%;
 				margin-right: 7%;
 				margin-bottom: 2%;
-				margin-top: 0%;
-				width: 86%;
 			}
 			#osn1{
 				margin-top: 5%;
 			}
-
 		}
+		
+
+		
+			
+		
 
 
 		
