@@ -6,7 +6,6 @@ p.list-text {
 	margin: 0;
 }
 a.nav-link {
-	text-align: center;
 	border: 1px solid black;
 	--bs-navbar-active-color: black;
 	margin: 0px;
