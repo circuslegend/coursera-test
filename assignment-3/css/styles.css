@@ -1,0 +1,47 @@
+* {
+	font-family: 'Oswald', sans-serif;
+	font-size: 105%;
+}
+p.list-text {
+	margin: 0;
+}
+a.nav-link {
+	text-align: center;
+	border: 1px solid black;
+	--bs-navbar-active-color: black;
+	margin: 0px;
+	background-color: white;
+}
+h1.text-center {
+	margin-top: 0.5em;
+	color: Black;
+	margin-bottom: 1em;
+}
+div.col-md-4 {
+	padding: 1%%;
+}
+
+div.text {
+	background-color: #FFAB00;
+	padding: 4%;
+	border:  1px solid black ;
+}
+
+
+@media (max-width: 575px)
+{
+
+nav div.container {
+	padding: 0;
+}
+
+a.navbar-brand {
+	margin-left: 2%;
+}
+
+button.navbar-toggler {
+	margin-right: 2%;
+}
+
+}
+
