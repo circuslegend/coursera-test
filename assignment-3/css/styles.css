@@ -12,13 +12,17 @@ a.nav-link {
 	margin: 0px;
 	background-color: white;
 }
+a.nav-link:hover, a.nav-link:active {
+	background-color: lightgrey;
+}
 h1.text-center {
 	margin-top: 0.5em;
 	color: Black;
 	margin-bottom: 1em;
 }
 div.col-md-4 {
-	padding: 1%%;
+	padding: 1%;
+	margin-bottom: 1%;
 }
 
 div.text {
