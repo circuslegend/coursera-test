@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Виселица</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+  </head>
+<body>
+  <header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+
+        <a class="navbar-brand" id="textUp" href="#" onclick="Refresh()" >Виселица &nbsp
+              <svg onclick="Refresh()" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                  <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+              </svg>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link categoryText text-center" href="#" onclick="Govno()">Правила</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle categoryText text-center" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Категории
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item categ text-center" href="#" id="food" onclick="Cat(this.id)">Еда</a></li>
+                    <li><a class="dropdown-item categ text-center" href="#" id="animals" onclick="Cat(this.id)">Животные</a></li>
+                    <li><a class="dropdown-item categ text-center" href="#" id="math" onclick="Cat(this.id)">Математика</a></li>
+                    <li><a class="dropdown-item categ text-center" href="#" id="furniture" onclick="Cat(this.id)">Мебель</a></li> 
+                    <li><a class="dropdown-item categ text-center" href="#" id="plants" onclick="Cat(this.id)">Растения</a></li> 
+                  </ul>
+                </li>
+              </li>
+              </ul>
+            </div>
+      </div>
+  </nav>
+  </header>
+
+  <div id="aboba1">
+    <div class="container" id="aboba">
+       <span id="catty" class="float start categoryText"></span>
+        <img id="photo" class="img-fluid rounded mx-auto d-block" alt="пеинт виселица" src="images/0.jpg"></img>
+        <h2 id="hidden" class="text-center"></h2>
+    </div>
+    <div class="container" id="section">
+      <div id="insert"></div>
+
+    <p id="words" class="d-none"></p>
+    <p id="hiddenwords" class="d-none"></p>
+    <p id="hiddenID" class="d-none"></p> 
+  </div>
+    <!-- jQuery (Bootstrap JS plugins depend on it) -->
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
