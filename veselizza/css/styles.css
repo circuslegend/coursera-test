@@ -76,3 +76,56 @@ height: 200px;
 	font-size: 4em;
 	margin-bottom: 20px;
 }
+
+#aboba1 > div button:focus {
+	box-shadow: none;
+}
+
+#finish {
+	margin-top: 20px;
+}
+
+nav button.navbar-toggler:focus {
+	box-shadow: none;
+}
+
+div  a.categoryText {
+	font-size: 1.6em;
+}
+
+body {
+ background-image: url("../images/test.jpg");
+}
+
+
+#pravila {
+	margin-top: 10px;
+	font-size: 2.8em;
+	padding: 10px;
+}
+#cover {
+	height: 500px;
+	width: 500px;
+}
+
+.categ {
+	font-size: 1.7em;
+}
+
+.categ:active {
+  background-color: grey;
+}
+
+#txtt {
+	color: black;
+}
+
+#choose {
+	font-size: 1.6em;
+}
+
+#catty {
+	font-size: 2em;
+}
+
+
