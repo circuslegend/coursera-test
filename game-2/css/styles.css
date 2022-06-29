@@ -3,13 +3,32 @@
 }
 
 #photo { 
-	height: 200px;
-	width: 200px;
-	margin-top: 20px;
+	height: 300px;
+	width: 224px;
+	margin-top: 2px;
 	margin-bottom: 20px;
  }
+
+ .carousel {
+ 	height: 420px;
+	width: 338.8px;
+	margin-top: 2px;
+	margin-bottom: 20px;
+ }
+
+ #pricool {
+ 	height: 400px;
+	width: auto;
+	overflow-y: scroll;
+ }
+
+ #carouselExampleIndicators {
+ 	margin-right: auto;
+ 	margin-left: auto;
+ }
+
  div#insert > button, div.row button {
- 	width: 10%;
+ 	width: 9.08%;
  	height: auto;
  	margin-bottom: 10px;
  	border: none;
@@ -51,8 +70,8 @@ button:hover {
 }
 
 #photo3 {
-height: 200px;
-	width: 200px;
+height: 300px;
+	width: 224px;
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
@@ -100,7 +119,6 @@ body {
 
 #pravila {
 	margin-top: 10px;
-	font-size: 2.8em;
 	padding: 10px;
 }
 #cover {
@@ -117,15 +135,22 @@ body {
 }
 
 #txtt {
-	color: black;
+	
 }
 
 #choose {
 	font-size: 1.6em;
 }
 
-#catty {
+#catty2 {
 	font-size: 2em;
 }
 
+#help2 {
+	font-size: 2em;
+}
+
+#zaebalsa {
+	margin-top: 5px;
+}
 

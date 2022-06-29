@@ -12,12 +12,17 @@ document.addEventListener("DOMContentLoaded",
 
       /////////// Choosing category and generating the random word from the database /////////
 
+      var helpcount=2;
       var Cat = function (id) {
          Gen();
-        document.querySelector("#catty")
-                  .innerHTML = '<span id="txtt">КАТЕГОРИЯ: ' +  
-                  document.querySelector("#"+id)
-                  .innerHTML.toUpperCase() + "</span>" ;
+         helpcount=2;
+         document.querySelector("#help1")
+                  .innerHTML = '<button id="help2" type="button" class="btn btn-outline-dark" onclick="Help(this.id)" >ПОДСКАЗКИ: '+helpcount+'</button>';
+        var catName=document.querySelector("#"+id).innerHTML;
+          if ( (catName.length>6) && (window.screen.width<"550") ) { catName="<br>"+catName}
+         document.querySelector("#catty1")
+                  .innerHTML = '<button id ="catty2" type="button" class="btn btn-outline-dark disabled" >КАТЕГОРИЯ: ' +  
+                  catName.toUpperCase() + "</button>" ;
         document.querySelector("#hiddenID")
                   .innerHTML = id;                 
         $ajax.sendGetRequest("data/data.json", 
@@ -30,9 +35,7 @@ document.addEventListener("DOMContentLoaded",
               if (id=="plants") {arr = request.plants;} else
               
                console.log(arr);
-              function randomIntFromInterval(min, max) { // min and max included 
-            return Math.floor(Math.random() * (max - min + 1) + min)
-          }
+             
 
           var randomArrayIndex = randomIntFromInterval(0,arr.length-1);
           const word = arr[randomArrayIndex].toUpperCase();
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded",
             var symbols = [];
             var check=false;
             counterjpg = 0;
-            document.getElementById("photo").src="images/"+counterjpg.toString()+".jpg";
+            document.getElementById("photo").src="images/"+counterjpg.toString()+".png";
                 var k=0;
                 for ( var i=1072; i<1104; i++) // generate array of letters
                 {
@@ -72,7 +75,7 @@ document.addEventListener("DOMContentLoaded",
 
                   var temp="";
                   var message="";
-                  for ( var i=0; i<30; i++) // create buttons
+                  for ( var i=0; i<33; i++) // create buttons
                   { 
                     temp="<button id={{insex}} class={{classi}} type={{typ}} onclick={{click}} enabled><p>{{name}}</p></button>";
                     temp = insertIn (temp,"insex",'"'+symbols[i]+'"');  
@@ -82,11 +85,11 @@ document.addEventListener("DOMContentLoaded",
                     temp = insertIn (temp,"click",'"'+"myFunction(this.id)"+'"');
                     message+=temp; 
                   }
-                  message+='<div class="container"><div class="row"><div class="col"></div><div class="col">' + 
-                  '<button id="э" class="btn btn-outline-dark rounded" type="button" onclick="myFunction(this.id)" enabled><p>э</p></button>'+ 
-                  '<button id="ю" class="btn btn-outline-dark rounded" type="button" onclick="myFunction(this.id)" enabled><p>ю</p></button>' + 
-                  '<button id="я" class="btn btn-outline-dark rounded" type="button" onclick="myFunction(this.id)" enabled><p>я</p></button>' +
-                  '</div><div class="col">'+'</div></div></div>';
+                  // message+='<div class="container"><div class="row"><div class="col"></div><div class="col">' + 
+                  // '<button id="э" class="btn btn-outline-dark rounded" type="button" onclick="myFunction(this.id)" enabled><p>э</p></button>'+ 
+                  // '<button id="ю" class="btn btn-outline-dark rounded" type="button" onclick="myFunction(this.id)" enabled><p>ю</p></button>' + 
+                  // '<button id="я" class="btn btn-outline-dark rounded" type="button" onclick="myFunction(this.id)" enabled><p>я</p></button>' +
+                  // '</div><div class="col">'+'</div></div></div>';
                   InsertHTML("#insert",message);
                   // console.log(message);
                             
@@ -114,40 +117,84 @@ document.addEventListener("DOMContentLoaded",
                 	.innerHTML = hiddenWord1;
         		if (checked==true) {document.getElementById(clicked_id).className +=" disabled disabled2"; } else 
         		{ document.getElementById(clicked_id).className +=" disabled"; if(counterjpg<7) { counterjpg++; 
-        			document.getElementById("photo").src="images/"+counterjpg.toString()+".jpg"; } else {final = true; }   }
+        			document.getElementById("photo").src="images/"+counterjpg.toString()+".png"; } else {final = true; }   }
+
 
         				//////// Final Screens ///////// 
-
-
 
     							if (final==true) { var falseMessage = 
     								"<div class=" + ' "container" id="aboba">' +
         					'<img id="photo3" class="img-fluid rounded mx-auto d-block" ' + 
-        					' alt="пеинт виселица" src="images/7.jpg"></img>' + 
-                   '<h2 id="hidden" class="text-center"> Слово: ' + word1 + '</h2>' 
+        					' alt="пеинт виселица" src="images/final.png"></img>' + 
+                   '<h2 id="hidden" class="text-center"> Слово: ' + word1 + '</h2>' + 
+                   '<h2 id="hidden" class="text-center"> Использовано подсказок: ' + helpusage + '</h2>' 
     								+ '<h2 id="lose"> К СОЖАЛЕНИЮ, ВЫ ПРОИГРАЛИ :(( </h2>';
-    							falseMessage+='<div id="container"><img id="photolose" class="img-fluid rounded mx-auto d-block" ' + 
-    							'alt="lose" src="final-gifs/lose.gif">  ' + '</img></div></div>';	
+    							// falseMessage+='<div id="container"><img id="photolose" class="img-fluid rounded mx-auto d-block" ' + 
+    							// 'alt="lose" src="final-gifs/lose.gif">  ' + '</img>'; тут будут гифки ( не забыть )
+                  falseMessage+='</div></div>';	
     									InsertHTML("#aboba1",falseMessage);
+                      document.querySelector("#linki")
+                    .className +=" disabled"; 
     							}		
 
                   if (hiddenWord1==word1) { 
                     final=true;
-                    var victoryMessage = "<div class=" + ' "container" id="aboba">' +
-                  '<img id="photo3" class="img-fluid rounded mx-auto d-block" ' + 
-                  ' alt="пеинт виселица" src="images/' + counterjpg + '.jpg"></img>' 
-                    victoryMessage +=
-                      '<h2 id="finish" class="text-center"> Слово: ' + word1 + '</h2>';
-                    victoryMessage += 
-                    "<h2 id="+'"congrats"> ПОЗДРАВЯЛЕМ С ПОБЕДОЙ!!! </h2>';
-                    victoryMessage+='<img id="photolose" class="img-fluid rounded mx-auto d-block" ' + 
-                  'alt="victory" src="final-gifs/vic.gif">  ' + '</img></div></div>'; 
-                      InsertHTML("#aboba1",victoryMessage); }
+                    VictoryMes(word1);
+                     }
 
     									
     					///////// END /////////
         		
+
         	}
+
+
+          ///////// Pidkazo4ka /////////
+
+          var helpusage=0; 
+          var Help = function(clicked_id) {
+              helpcount--;
+              helpusage++;
+              if (helpcount==0) {
+              document.querySelector("#help1")
+                    .innerHTML = '<button id="help2" type="button"' + 
+                    'class="btn btn-outline-dark disabled" onclick="Help(this.id)" >ПОДСКАЗКИ: '+helpcount+'</button>'; } else {  
+                      document.querySelector("#help1")
+                    .innerHTML = '<button id="help2" type="button" class="btn btn-outline-dark"' + 
+                      'onclick="Help(this.id)" >ПОДСКАЗКИ: '+helpcount+'</button>';
+                    }
+
+              var word1=document.querySelector("#words").innerHTML;
+              var hiddenWord1=document.querySelector("#hiddenwords").innerHTML;
+              var randomOpenIndex = randomIntFromInterval(0,word1.length-1);
+              while (hiddenWord1[randomOpenIndex]!="_") {
+                randomOpenIndex = randomIntFromInterval(0,word1.length-1);
+              }
+              var counter=0;
+              for ( var i=0; i<word1.length; i++){
+                if (word1[i]==word1[randomOpenIndex]) { counter++ }
+              }
+              // console.log("counter: " + counter);
+              if ( counter < 2) {
+                var temp = word1[randomOpenIndex].toLowerCase(); 
+                // console.log(temp);
+                document.getElementById(temp).className +=" disabled disabled2";
+              }
+              // console.log(randomOpenIndex + "   " + word1[randomOpenIndex]);
+              hiddenWord1=hiddenWord1.replaceAt(randomOpenIndex, word1[randomOpenIndex]); 
+              // console.log(hiddenWord1);
+              document.querySelector("#hidden")
+                  .innerHTML = hiddenWord1;
+              document.querySelector("#hiddenwords")
+                  .innerHTML = hiddenWord1;
+              if (hiddenWord1==word1) { 
+                    final=true;
+                    VictoryMes(word1);
+                    window.alert("Отгадать с подсказки. Определенно можешь собой гордиться ... ")
+                     }
+          }
+
+          ///////// END /////////
 
     ///////// END /////////
 
@@ -170,6 +217,28 @@ document.addEventListener("DOMContentLoaded",
   					return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 			}
 
+       function randomIntFromInterval(min, max) { // min and max included 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+          }
+
+       var VictoryMes = function (word1) {
+         var victoryMessage = "<div class=" + ' "container" id="aboba">' +
+                  '<img id="photo3" class="img-fluid rounded mx-auto d-block" ' + 
+                  ' alt="пеинт виселица" src="images/' + counterjpg + '.png"></img>' 
+                    victoryMessage +=
+                      '<h2 id="finish" class="text-center"> Слово: ' + word1 + '</h2>' + 
+                   '<h2 id="hidden" class="text-center"> Использовано подсказок: ' + helpusage + '</h2>' + 
+                   '<h2 id="hidden" class="text-center"> Допущено ошибок: ' + counterjpg + '</h2>';
+                    victoryMessage += 
+                    "<h2 id="+'"congrats"> ПОЗДРАВЯЛЕМ С ПОБЕДОЙ!!! </h2>';
+                  //   victoryMessage+='<img id="photolose" class="img-fluid rounded mx-auto d-block" ' + 
+                  // 'alt="victory" src="final-gifs/vic.gif"></img>'; тут будут гифки ( не забыть )
+                    victoryMessage+='</div></div>';
+                      InsertHTML("#aboba1",victoryMessage);
+                      document.querySelector("#linki")
+                    .className +=" disabled";
+       }   
+
  
     ///////// END /////////
 
@@ -182,24 +251,32 @@ document.addEventListener("DOMContentLoaded",
 
 
     ///////// Pravila dlya dodikov /////////
+
     var pizarella=false;
     var Govno = function() {
             pizarella=true;
               $ajax.sendGetRequest("data/pravila.txt", 
             function (request) {
-              var message3 = '<div class="container-fluid">' + '<img id="cover" class="img-fluid rounded mx-auto d-block" ' + 
-                  ' alt="пеинт виселица" src="images/cover.jpg"></img>' 
-              + '<p id="pravila">';
-              message3+= request;
-              message3+='</p></div>';
-              console.log(message3);
-              InsertHTML("#aboba1",message3);
+              var temp1 = request; 
+                 $ajax.sendGetRequest("data/carousel.txt", 
+                    function (request) {
+                      // message3='<div class="container">';
+                      var message3=request;
+                      message3+='<div class="container" id="pricool"><p>' + temp1;
+                      message3+='</p></div></div>';
+                      InsertHTML("#aboba1",message3);
+                      document.querySelector("#linki")
+                          .className +=" disabled";
+                      console.log(message3);
+                    }, false );         
         }, false);
     }
 
     ///////// END /////////
 
+
     ///////// Refresh function /////////
+
     var Refresh = function() {
       if ( ( final==false ) && (pizarella==false) && (dec==false) ) {
       Cat(document.querySelector("#hiddenID")
@@ -207,6 +284,7 @@ document.addEventListener("DOMContentLoaded",
         location. reload()
       }
     }
+
     //////// END /////////
 
 
