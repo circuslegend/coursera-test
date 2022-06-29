@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded",
        var VictoryMes = function (word1) {
          var victoryMessage = "<div class=" + ' "container" id="aboba">' +
                   '<img id="photo3" class="img-fluid rounded mx-auto d-block" ' + 
-                  ' alt="пеинт виселица" src="images/' + counterjpg + '.png"></img>' 
+                  ' alt="пеинт виселица" src="images/vic.png"></img>' 
                     victoryMessage +=
                       '<h2 id="finish" class="text-center"> Слово: ' + word1 + '</h2>' + 
                    '<h2 id="hidden" class="text-center"> Использовано подсказок: ' + helpusage + '</h2>' + 
